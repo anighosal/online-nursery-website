@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Woody Plants",
+    "image": "https://i.ibb.co/LCnvp9H/tree-limits-height-width-growth-ring-discussion.webp",
+    "products": [
+      {
+        "id": 1,
+        "title": "Oak Tree",
+        "description": "A sturdy oak tree perfect for large gardens.",
+        "image": "https://i.ibb.co/WpDz9N7/2048x1365-Oak-trees-SEO-Getty-Images-90590330-b6bfe8b.jpg",
+        "price": 299.99,
+        "rating": 4.7,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 2,
+        "title": "Pine Tree",
+        "description": "A beautiful pine tree that stays green all year round.",
+        "image": "https://i.ibb.co/kHyj6Jk/pngtree-single-green-pine-tree-flat-object-png-png-image-10188471.png",
+        "price": 249.99,
+        "rating": 4.6,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 3,
+        "title": "Maple Tree",
+        "description": "A maple tree known for its stunning autumn colors.",
+        "image": "https://i.ibb.co/tMp00rs/images.jpg",
+        "price": 199.99,
+        "rating": 4.8,
+        "buttons": ["Add to Cart", "View Details"]
+      }
+    ]
+  },
+  {
+    "name": "Fruiting Plants",
+    "image": "https://i.ibb.co/2ndGmcT/orange-tree-stock-image-royalty-free-image-657096990-1532470398.jpg",
+    "products": [
+      {
+        "id": 4,
+        "title": "Apple Tree",
+        "description": "A healthy apple tree that produces delicious apples.",
+        "image": "https://i.ibb.co/MR4zq4C/apples-2788599-1280.jpg",
+        "price": 129.99,
+        "rating": 4.7,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 5,
+        "title": "Orange Tree",
+        "description": "An orange tree perfect for producing juicy oranges.",
+        "image": "https://i.ibb.co/ky8MkVj/oranges-1117628-640.jpg",
+        "price": 139.99,
+        "rating": 4.5,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 6,
+        "title": "Lemon Tree",
+        "description": "A lemon tree that yields tangy lemons.",
+        "image": "https://i.ibb.co/Nsv0bh3/istockphoto-157193938-612x612.jpg",
+        "price": 119.99,
+        "rating": 4.6,
+        "buttons": ["Add to Cart", "View Details"]
+      }
+    ]
+  },
+  {
+    "name": "Flowering Plants",
+    "image": "https://i.ibb.co/VJ01vP0/nurserylive-flowering-plants-category-image-505581.jpg",
+    "products": [
+      {
+        "id": 7,
+        "title": "Rose Bush",
+        "description": "A stunning rose bush with fragrant blooms.",
+        "image": "https://i.ibb.co/YR19xQx/9ab85db12232eb36aec117efd571666a.jpg",
+        "price": 39.99,
+        "rating": 4.9,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 8,
+        "title": "Tulip Bulbs",
+        "description": "A set of vibrant tulip bulbs for spring.",
+        "image": "https://i.ibb.co/0tmSKH8/tulip-bulbs-pot-amsterdam-flower-260nw-510365275.webp",
+        "price": 29.99,
+        "rating": 4.8,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 9,
+        "title": "Daisy Plant",
+        "description": "A cheerful daisy plant for your garden.",
+        "image": "https://i.ibb.co/r2bht8f/istockphoto-1396363669-612x612.jpg",
+        "price": 24.99,
+        "rating": 4.7,
+        "buttons": ["Add to Cart", "View Details"]
+      }
+    ]
+  },
+  {
+    "name": "Indoor Plants",
+    "image": "https://i.ibb.co/nMZfhCS/snake-plant.jpg",
+    "products": [
+      {
+        "id": 10,
+        "title": "Spider Plant",
+        "description": "An easy-to-care-for spider plant.",
+        "image": "https://i.ibb.co/nMZfhCS/snake-plant.jpg",
+        "price": 19.99,
+        "rating": 4.6,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 11,
+        "title": "Peace Lily",
+        "description": "A beautiful peace lily with white blooms.",
+        "image": "https://i.ibb.co/HpdN1tQ/istockphoto-177320705-612x612.jpg",
+        "price": 24.99,
+        "rating": 4.8,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 12,
+        "title": "Snake Plant",
+        "description": "A hardy snake plant that thrives in low light.",
+        "image": "https://i.ibb.co/mScFsjf/images-1.jpg",
+        "price": 29.99,
+        "rating": 4.7,
+        "buttons": ["Add to Cart", "View Details"]
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Plants",
+    "image": "https://i.ibb.co/SPdtR26/impossible-to-kill-outdoor-plants-1-2000-f513b0574cb04674a1bce40b832b28dd.jpg",
+    "products": [
+      {
+        "id": 13,
+        "title": "Lavender",
+        "description": "A fragrant lavender plant perfect for outdoor gardens.",
+        "image": "https://i.ibb.co/thzWzpS/b9f74faae7f2c1b3865e007116cfb8fb.jpg",
+        "price": 14.99,
+        "rating": 4.9,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 14,
+        "title": "Sunflower",
+        "description": "A tall sunflower plant that brightens any garden.",
+        "image": "https://i.ibb.co/5BHFhvM/two-sunflowers-growing-in-pot-flowers-in-pots-sunflower-helianthus-KHTK8-D.jpg",
+        "price": 9.99,
+        "rating": 4.8,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 15,
+        "title": "Marigold",
+        "description": "A vibrant marigold plant for your garden.",
+        "image": "https://i.ibb.co/7jWRwLf/713b6h-Lg-IDL-AC-UF1000-1000-QL80.jpg",
+        "price": 7.99,
+        "rating": 4.7,
+        "buttons": ["Add to Cart", "View Details"]
+      }
+    ]
+  },
+  {
+    "name": "Seeds",
+    "image": "https://i.ibb.co/dGjpV9x/download.jpg",
+    "products": [
+      {
+        "id": 16,
+        "title": "Tomato Seeds",
+        "description": "A packet of heirloom tomato seeds.",
+        "image": "https://i.ibb.co/3Np6QRv/PP-Growing-Tomatoes-from-Seed2.jpg",
+        "price": 4.99,
+        "rating": 4.6,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 17,
+        "title": "Carrot Seeds",
+        "description": "A packet of organic carrot seeds.",
+        "image": "https://i.ibb.co/HzYmjsm/images-2.jpg",
+        "price": 3.99,
+        "rating": 4.5,
+        "buttons": ["Add to Cart", "View Details"]
+      },
+      {
+        "id": 18,
+        "title": "Basil Seeds",
+        "description": "A packet of basil seeds for your herb garden.",
+        "image": "https://i.ibb.co/TqfqpHq/images-3.jpg",
+        "price": 2.99,
+        "rating": 4.7,
+        "buttons": ["Add to Cart", "View Details"]
+      }
+    ]
+  }
+]
