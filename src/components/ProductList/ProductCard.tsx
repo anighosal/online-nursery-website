@@ -3,6 +3,7 @@
 import { IProduct } from "@/types/types";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import StarRating from "../ui/StarRating";
 
 interface ProductCardProps {
@@ -36,12 +37,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         >
-          <button
-            onClick={() => {} /* Implement your view details action here */}
-            className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none"
-          >
-            View Details
-          </button>
+          <Link to={`/products/${product.id}`}>
+            <button className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
       <div className="p-4">

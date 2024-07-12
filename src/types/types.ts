@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // src/app/types.ts
 
 import { Key } from "react";
 
 export interface IProduct {
-  id: number;
+  category: string;
+  name: any;
+  id: string;
   title: string;
   description: string;
   image: string;

@@ -6,19 +6,26 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/", // Assuming your data.json is in the public folder
+    baseUrl: "/",
   }),
 
   endpoints: (builder) => ({
     fetchCategories: builder.query<ICategory[], void>({
-      query: () => "/public/data.json", // Adjust path as needed
+      query: () => "/public/data.json",
     }),
     fetchProducts: builder.query<IProduct[], void>({
-      query: () => "/public/data.json", // Adjust path as needed
+      query: () => "/public/data.json",
       transformResponse: (response: { products: IProduct[] }) =>
         response.products,
+    }),
+    fetchProductById: builder.query<IProduct, string>({
+      query: (id: string) => `/public/data.json/products/${id}`,
     }),
   }),
 });
 
-export const { useFetchCategoriesQuery, useFetchProductsQuery } = baseApi;
+export const {
+  useFetchCategoriesQuery,
+  useFetchProductsQuery,
+  useFetchProductByIdQuery,
+} = baseApi;

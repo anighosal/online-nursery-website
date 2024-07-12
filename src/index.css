@@ -18,6 +18,14 @@
   background-clip: text; /* Apply background to text */
   color: transparent; /* Hides original text */
 }
+.footer {
+  background-color: #047e29; /* Your preferred background color */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.3);
+}
 
 @layer base {
   :root {
