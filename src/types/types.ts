@@ -3,7 +3,7 @@
 import { Key } from "react";
 
 export interface IProduct {
-  category: string;
+  category: string | undefined;
   name: any;
   id: string;
   title: string;

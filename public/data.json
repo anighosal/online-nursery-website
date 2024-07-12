@@ -10,7 +10,8 @@
         "image": "https://i.ibb.co/WpDz9N7/2048x1365-Oak-trees-SEO-Getty-Images-90590330-b6bfe8b.jpg",
         "price": 299.99,
         "rating": 4.7,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Woody Plants"
       },
       {
         "id": 2,
@@ -19,7 +20,8 @@
         "image": "https://i.ibb.co/kHyj6Jk/pngtree-single-green-pine-tree-flat-object-png-png-image-10188471.png",
         "price": 249.99,
         "rating": 4.6,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Woody Plants"
       },
       {
         "id": 3,
@@ -28,7 +30,8 @@
         "image": "https://i.ibb.co/tMp00rs/images.jpg",
         "price": 199.99,
         "rating": 4.8,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Woody Plants"
       }
     ]
   },
@@ -43,7 +46,8 @@
         "image": "https://i.ibb.co/MR4zq4C/apples-2788599-1280.jpg",
         "price": 129.99,
         "rating": 4.7,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Fruiting Plants"
       },
       {
         "id": 5,
@@ -52,7 +56,8 @@
         "image": "https://i.ibb.co/ky8MkVj/oranges-1117628-640.jpg",
         "price": 139.99,
         "rating": 4.5,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Fruiting Plants"
       },
       {
         "id": 6,
@@ -61,7 +66,8 @@
         "image": "https://i.ibb.co/Nsv0bh3/istockphoto-157193938-612x612.jpg",
         "price": 119.99,
         "rating": 4.6,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Fruiting Plants"
       }
     ]
   },
@@ -76,7 +82,8 @@
         "image": "https://i.ibb.co/YR19xQx/9ab85db12232eb36aec117efd571666a.jpg",
         "price": 39.99,
         "rating": 4.9,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Flowering Plants"
       },
       {
         "id": 8,
@@ -85,7 +92,8 @@
         "image": "https://i.ibb.co/0tmSKH8/tulip-bulbs-pot-amsterdam-flower-260nw-510365275.webp",
         "price": 29.99,
         "rating": 4.8,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Flowering Plants"
       },
       {
         "id": 9,
@@ -94,7 +102,8 @@
         "image": "https://i.ibb.co/r2bht8f/istockphoto-1396363669-612x612.jpg",
         "price": 24.99,
         "rating": 4.7,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Flowering Plants"
       }
     ]
   },
@@ -109,7 +118,8 @@
         "image": "https://i.ibb.co/nMZfhCS/snake-plant.jpg",
         "price": 19.99,
         "rating": 4.6,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Indoor Plants"
       },
       {
         "id": 11,
@@ -118,7 +128,8 @@
         "image": "https://i.ibb.co/HpdN1tQ/istockphoto-177320705-612x612.jpg",
         "price": 24.99,
         "rating": 4.8,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Indoor Plants"
       },
       {
         "id": 12,
@@ -127,7 +138,8 @@
         "image": "https://i.ibb.co/mScFsjf/images-1.jpg",
         "price": 29.99,
         "rating": 4.7,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Indoor Plants"
       }
     ]
   },
@@ -142,7 +154,8 @@
         "image": "https://i.ibb.co/thzWzpS/b9f74faae7f2c1b3865e007116cfb8fb.jpg",
         "price": 14.99,
         "rating": 4.9,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Outdoor Plants"
       },
       {
         "id": 14,
@@ -151,7 +164,8 @@
         "image": "https://i.ibb.co/5BHFhvM/two-sunflowers-growing-in-pot-flowers-in-pots-sunflower-helianthus-KHTK8-D.jpg",
         "price": 9.99,
         "rating": 4.8,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Outdoor Plants"
       },
       {
         "id": 15,
@@ -160,7 +174,8 @@
         "image": "https://i.ibb.co/7jWRwLf/713b6h-Lg-IDL-AC-UF1000-1000-QL80.jpg",
         "price": 7.99,
         "rating": 4.7,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Outdoor Plants"
       }
     ]
   },
@@ -175,7 +190,8 @@
         "image": "https://i.ibb.co/3Np6QRv/PP-Growing-Tomatoes-from-Seed2.jpg",
         "price": 4.99,
         "rating": 4.6,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Seeds"
       },
       {
         "id": 17,
@@ -184,7 +200,8 @@
         "image": "https://i.ibb.co/HzYmjsm/images-2.jpg",
         "price": 3.99,
         "rating": 4.5,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Seeds"
       },
       {
         "id": 18,
@@ -193,7 +210,8 @@
         "image": "https://i.ibb.co/TqfqpHq/images-3.jpg",
         "price": 2.99,
         "rating": 4.7,
-        "buttons": ["Add to Cart", "View Details"]
+        "buttons": ["Add to Cart", "View Details"],
+        "category": "Seeds"
       }
     ]
   }

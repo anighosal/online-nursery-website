@@ -31,15 +31,17 @@ const Navbar: React.FC<NavbarProps> = ({ cartItems }) => {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(searchTerm);
-    // Implement search functionality here
   };
 
   return (
     <nav className="bg-white shadow-md py-4 px-6 md:flex md:justify-between md:items-center">
       <div className="flex justify-between items-center w-full">
-        <h1 className="text-xl font-bold">
-          <span className="gradient-text">Nature's Nest</span>
-        </h1>
+        <Link to="/">
+          <h1 className="text-xl font-bold">
+            <span className="gradient-text">Nature's Nest</span>
+          </h1>
+        </Link>
+
         <form
           onSubmit={handleSearch}
           className="hidden md:flex items-center w-full max-w-md mx-4"
@@ -60,6 +62,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartItems }) => {
           </button>
         </form>
         <div className="flex items-center space-x-4">
+          <Link to="/dashboard">
+            <p>dashboard</p>
+          </Link>
+
           <Link to="/login">
             <UserAddOutlined className="text-gray-700 hover:text-green-600 cursor-pointer" />
           </Link>

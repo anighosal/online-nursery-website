@@ -1,45 +1,45 @@
-import { useFetchProductsQuery } from "@/redux/api/baseApi";
-
+import { useFetchCategoriesQuery } from "@/redux/api/baseApi";
+import { ICategory } from "@/types/types";
 import { useParams } from "react-router-dom";
 
+import CartButton from "@/components/CartButton/CartButton";
+import StarRating from "@/components/ui/StarRating";
+
 const ProductDetails: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Assuming productId is passed via route params
+  const { id } = useParams<{ id: string }>();
 
-  const { data: products, isLoading } = useFetchProductsQuery();
+  const { data: categories } = useFetchCategoriesQuery();
 
-  if (isLoading) return <div>Loading...</div>;
-
-  const product = products?.find((p) => p.id === id);
-
-  if (!product) return <div>Product not found.</div>;
+  const product = categories
+    ?.flatMap((category: ICategory) => category.products)
+    .find((p) => p.id == id);
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex">
-        <div className="w-1/2">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="w-full h-auto"
-          />
-        </div>
-        <div className="w-1/2 px-4">
-          <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-          <p className="text-gray-600 mb-2">{product.description}</p>
-          <div className="flex items-center mt-2">
-            <span className="text-gray-600">{product.category}</span>
-            <span className="ml-4">Rating: {product.rating}</span>
+    <div className="mx-auto p-4 border border-t-slate-400 mt-6 max-w-2xl">
+      <div className="m-4">
+        <div className="flex justify-between items-center">
+          <div className="w-1/2 p-4 flex justify-between items-center">
+            <img
+              src={product?.image}
+              alt={product?.title}
+              className="h-22 object-contain"
+            />
           </div>
-          <span className="text-red-600">${product.price.toFixed(2)}</span>
-          <button
-            onClick={() => {
-              // Implement your add to cart functionality
-              console.log("Add to cart clicked for:", product.title);
-            }}
-            className="bg-green-600 text-white px-4 py-2 rounded-md mt-4 hover:bg-green-700"
-          >
-            Add to Cart
-          </button>
+          <div className="w-1/2 p-4">
+            <h1 className="text-2xl font-bold mb-4">{product?.title}</h1>
+            <p className="text-gray-600 mb-2">{product?.description}</p>
+            <p className="text-gray-600 mb-2">{product?.category}</p>
+
+            <div className="flex items-center mt-2">
+              <StarRating rating={product?.rating} />
+              <span className="ml-2 text-gray-600">{product?.rating}</span>
+            </div>
+
+            <p className="text-red-600 font-bold">
+              ${product?.price.toFixed(2)}
+            </p>
+            <CartButton cartItems={[]} />
+          </div>
         </div>
       </div>
     </div>
