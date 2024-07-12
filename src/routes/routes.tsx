@@ -1,5 +1,5 @@
 import MainLayout from "@/components/layouts/MainLayout";
-import Checkout from "@/pages/Checkout";
+import Cart from "@/pages/Cart/Cart";
 
 import Home from "@/pages/Home/Home";
 import Payment from "@/pages/Payment";
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
-        path: "/products",
-        element: <Checkout />,
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/products",

@@ -11,11 +11,11 @@ import {
 
 const HeroSection = () => {
   return (
-    <div className="  bg-slate-100 h-[400px]">
-      <Carousel className="">
+    <div className="container mx-auto  bg-slate-100 h-[400px]">
+      <Carousel className="container mx-auto">
         <CarouselContent className="h-full">
-          <CarouselItem className="flex flex-col md:flex-row items-center h-full">
-            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full ml-12">
+          <CarouselItem className="flex flex-col md:flex-row items-center h-full w-full">
+            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full">
               <h2 className="text-2xl md:text-4xl font-bold">
                 Welcome to Nature's Nest
               </h2>
@@ -29,12 +29,12 @@ const HeroSection = () => {
               <img
                 src={image1}
                 alt="Beautiful flowers at Nature's Nest"
-                className="w-full h-[400px] object-contain "
+                className="w-full h-[400px] object-contain"
               />
             </div>
           </CarouselItem>
-          <CarouselItem className="flex flex-col md:flex-row items-center h-full">
-            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full ml-12">
+          <CarouselItem className="flex flex-col md:flex-row items-center h-full w-full">
+            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full">
               <h2 className="text-2xl md:text-4xl font-bold">Quality Plants</h2>
               <p className="mt-2">
                 We provide high-quality plants that are perfect for both indoor
@@ -50,8 +50,8 @@ const HeroSection = () => {
               />
             </div>
           </CarouselItem>
-          <CarouselItem className="flex flex-col md:flex-row items-center h-full">
-            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full ml-12">
+          <CarouselItem className="flex flex-col md:flex-row items-center h-full w-full">
+            <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full">
               <h2 className="text-2xl md:text-4xl font-bold">Expert Advice</h2>
               <p className="mt-2">
                 Our knowledgeable staff is here to help you with all your
@@ -59,7 +59,7 @@ const HeroSection = () => {
                 we are here to support your gardening journey.
               </p>
             </div>
-            <div className="w-full md:w-1/2 h-full md:h-1/6">
+            <div className="w-full md:w-1/2 h-full">
               <img
                 src={image3}
                 alt="Expert advice at Nature's Nest"

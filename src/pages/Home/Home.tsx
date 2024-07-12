@@ -9,9 +9,7 @@ import ProductDetails from "../ProductDetails";
 
 const Home = () => {
   const handleSearch = (term: string) => {
-    // Implement your search logic here
     console.log("Searching for:", term);
-    // Optionally, you might navigate to a different page or update state
   };
   return (
     <div>

@@ -1,18 +1,24 @@
-// src/components/ProductCard.tsx
+import { IProduct } from "@/types/types"; // Adjust path based on your project structure
 
-import { IProduct } from "@/types/types";
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import StarRating from "../ui/StarRating";
+
+import { addToCart } from "@/redux/features/cartSlice";
+import CartButton from "../CartButton/CartButton";
+import StarRating from "../ui/StarRating"; // Adjust path based on your project structure
 
 interface ProductCardProps {
   product: IProduct;
-  onAddToCart: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
 
   return (
     <div className="relative bg-white border shadow-md overflow-hidden h-full">
@@ -55,16 +61,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
 
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2 space-y-2">
-            <div onClick={onAddToCart} className="absolute top-2 right-2">
-              <ShoppingCartOutlined
-                style={{
-                  fontSize: "24px",
-                  color: "#fff",
-                  backgroundColor: "#047e29",
-                  borderRadius: "50%",
-                  padding: "8px",
-                }}
-              ></ShoppingCartOutlined>
+            <div
+              onClick={handleAddToCart}
+              className="absolute top-2 right-2 cursor-pointer"
+            >
+              <CartButton cartItems={[]} />
             </div>
           </div>
         </div>

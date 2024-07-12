@@ -1,23 +1,28 @@
+import CartButton from "@/components/CartButton/CartButton";
 import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import {
   NavigationMenu,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { RootState } from "@/redux/store";
+import { ICartItem } from "@/types/types";
+
 import {
   HeartOutlined,
   SearchOutlined,
-  ShoppingCartOutlined,
   UserAddOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+interface NavbarProps {
+  cartItems: ICartItem[];
+}
+
+const Navbar: React.FC<NavbarProps> = ({ cartItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const cartItems = useSelector((state: RootState) => state.cart.items);
+  // const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -61,22 +66,9 @@ const Navbar = () => {
           <Link to="/wishlist">
             <HeartOutlined className="text-red-500 hover:text-green-600 cursor-pointer" />
           </Link>
-          <Link to="/cart" className="relative">
-            <ShoppingCartOutlined
-              style={{
-                fontSize: "24px",
-                color: "#fff",
-                backgroundColor: "#047e29",
-                borderRadius: "50%",
-                padding: "8px",
-              }}
-            />
-            {cartItems.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-green-600 text-white rounded-full px-1 text-xs">
-                {cartItems.length}
-              </span>
-            )}
-          </Link>
+          <div className="flex items-center pr-5">
+            <CartButton cartItems={cartItems} />
+          </div>
           <button className="md:hidden" onClick={toggleMenu}>
             <Menubar>
               <MenubarMenu>

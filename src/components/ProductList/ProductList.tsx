@@ -1,5 +1,3 @@
-// src/components/ProductSection.tsx
-
 import { useFetchCategoriesQuery } from "@/redux/api/baseApi";
 import { ICategory, IProduct } from "@/types/types";
 import ProductCard from "./ProductCard";
@@ -15,9 +13,7 @@ const ProductList = () => {
           category.products.map((product: IProduct) => (
             <div key={product.id} className="w-full">
               <div className="h-full">
-                {" "}
-                {/* Set a fixed height for each card */}
-                <ProductCard product={product} onAddToCart={() => {}} />
+                <ProductCard product={product} />
               </div>
             </div>
           ))

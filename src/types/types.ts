@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/app/types.ts
 
 import { Key } from "react";
 
@@ -20,4 +19,11 @@ export interface ICategory {
   name: string;
   image: string;
   products: IProduct[];
+}
+
+export interface ICartItem {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
 }

@@ -9,7 +9,6 @@ const ProductDetails: React.FC = () => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  // Find the product by productId
   const product = products?.find((p) => p.id === id);
 
   if (!product) return <div>Product not found.</div>;
