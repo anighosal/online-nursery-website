@@ -1,12 +1,11 @@
-import { IProduct } from "@/types/types"; // Adjust path based on your project structure
-
+import { addToCart } from "@/redux/reducers/cartReducer";
+import { IProduct } from "@/types/types";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
-import { addToCart } from "@/redux/features/cartSlice";
-import CartButton from "../CartButton/CartButton";
-import StarRating from "../ui/StarRating"; // Adjust path based on your project structure
+import StarRating from "../ui/StarRating";
+import { Button } from "../ui/button";
 
 interface ProductCardProps {
   product: IProduct;
@@ -44,9 +43,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           }`}
         >
           <Link to={`/products/${product.id}`}>
-            <button className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none">
+            <Button className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none">
               View Details
-            </button>
+            </Button>
           </Link>
         </div>
       </div>
@@ -54,18 +53,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h3 className="text-lg font-semibold">{product.title}</h3>
         <p className="text-gray-600 mb-2">{product.description}</p>
         <div className="flex items-center mt-2">
-          <StarRating rating={product.rating} />
+          <StarRating rating={Number(product.rating)} />
           <span className="ml-2 text-gray-600">{product.rating}</span>
         </div>
-        <span className="text-red-600">${product.price.toFixed(2)}</span>
+        <span className="text-red-600">${product.price}</span>
 
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2 space-y-2">
             <div
               onClick={handleAddToCart}
-              className="absolute top-2 right-2 cursor-pointer"
+              className="flex items-center cursor-pointer"
             >
-              <CartButton cartItems={[]} />
+              <ShoppingCartOutlined
+                style={{
+                  fontSize: "24px",
+                  color: "#047e29",
+                }}
+              />
+              <span className="ml-2 text-gray-600">Add to Cart</span>
             </div>
           </div>
         </div>

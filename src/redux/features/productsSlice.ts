@@ -1,55 +1,41 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import { RootState } from "./store";
-// import { fetchProductsApi } from "../api";
+import { IProduct } from "@/types/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// interface Product {
-//   id: string;
-//   image: string;
-//   title: string;
-//   price: number;
-//   category: string;
-// }
+interface ProductsState {
+  products: IProduct[];
+}
 
-// interface ProductsState {
-//   products: Product[];
-//   status: "idle" | "loading" | "succeeded" | "failed";
-//   error: string | null;
-// }
+const initialState: ProductsState = {
+  products: [],
+};
 
-// const initialState: ProductsState = {
-//   products: [],
-//   status: "idle",
-//   error: null,
-// };
+const productsSlice = createSlice({
+  name: "products",
+  initialState,
+  reducers: {
+    setProducts: (state, action: PayloadAction<IProduct[]>) => {
+      state.products = action.payload;
+    },
+    addProduct: (state, action: PayloadAction<IProduct>) => {
+      state.products.unshift(action.payload);
+    },
+    updateProduct: (state, action: PayloadAction<IProduct>) => {
+      const index = state.products.findIndex(
+        (product) => product.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.products[index] = action.payload;
+      }
+    },
+    deleteProduct: (state, action: PayloadAction<string>) => {
+      state.products = state.products.filter(
+        (product) => product.id !== action.payload
+      );
+    },
+  },
+});
 
-// export const fetchProducts = createAsyncThunk(
-//   "products/fetchProducts",
-//   async () => {
-//     const response = await fetchProductsApi();
-//     return response.data;
-//   }
-// );
+export const { setProducts, addProduct, updateProduct, deleteProduct } =
+  productsSlice.actions;
 
-// const productsSlice = createSlice({
-//   name: "products",
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(fetchProducts.pending, (state) => {
-//         state.status = "loading";
-//       })
-//       .addCase(fetchProducts.fulfilled, (state, action) => {
-//         state.status = "succeeded";
-//         state.products = action.payload;
-//       })
-//       .addCase(fetchProducts.rejected, (state, action) => {
-//         state.status = "failed";
-//         state.error = action.error.message;
-//       });
-//   },
-// });
-
-// export const selectProducts = (state: RootState) => state.products.products;
-
-// export default productsSlice.reducer;
+export default productsSlice.reducer;

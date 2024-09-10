@@ -42,9 +42,7 @@ const Cart = () => {
                     />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">{item.title}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    ${item.price.toFixed(2)}
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">${item.price}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <button className="text-red-600 hover:text-red-900">
                       Remove

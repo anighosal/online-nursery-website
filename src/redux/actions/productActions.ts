@@ -1,26 +1,11 @@
-// src/redux/actions/productActions.ts
-import { IProduct } from "@/types/types";
-import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
+// actions/productActions.ts
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import baseApi from "../api/baseApi";
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
-    const response = await fetch("/data/products.json");
-    const data: IProduct[] = await response.json();
-    return data;
+    const response = await baseApi.get("/products");
+    return response.data;
   }
 );
-
-export const searchProducts = (query: string) => ({
-  type: "products/search",
-  payload: query,
-});
-
-export const filterProducts = (category: string) => ({
-  type: "products/filter",
-  payload: category,
-});
-
-export const addProduct = createAction<IProduct>("products/add");
-export const updateProduct = createAction<IProduct>("products/update");
-export const deleteProduct = createAction<number>("products/delete");

@@ -1,14 +1,28 @@
+import Container from "@/components/ui/Container";
+import { useGetProductsByCategoryNameQuery } from "@/redux/api/baseApi";
 import { IProduct } from "@/types/types";
+import { useParams } from "react-router-dom";
 
-interface ProductsTableProps {
-  products: IProduct[];
-}
+const CategoryDetails = () => {
+  const { categoryName } = useParams<{ categoryName: string }>();
+  const {
+    data: products,
+    isLoading,
+    isError,
+  } = useGetProductsByCategoryNameQuery(categoryName);
 
-const ProductsTable: React.FC<ProductsTableProps> = ({ products }) => {
+  if (isLoading) return <div>Loading...</div>;
+
+  if (isError)
+    return <div>Error fetching products for category '{categoryName}'</div>;
+
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border-gray-200 shadow-sm rounded-lg overflow-hidden">
-        <thead className="bg-gray-100 border-b border-gray-200">
+    <Container>
+      <h2 className="text-2xl font-bold text-center mb-4 mt-20 pt-10">
+        {categoryName} Products
+      </h2>
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Image
@@ -22,42 +36,29 @@ const ProductsTable: React.FC<ProductsTableProps> = ({ products }) => {
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Category
             </th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Actions
-            </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
-          {products.map((product: IProduct) => (
+        <tbody className="bg-white divide-y divide-gray-200">
+          {products?.map((product: IProduct) => (
             <tr key={product.id}>
               <td className="px-6 py-4 whitespace-nowrap">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="h-16 w-16 object-cover rounded"
+                  className="h-10 w-10 rounded-full"
                 />
               </td>
               <td className="px-6 py-4 whitespace-nowrap">{product.title}</td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                ${product.price.toFixed(2)}
-              </td>
+              <td className="px-6 py-4 whitespace-nowrap">${product.price}</td>
               <td className="px-6 py-4 whitespace-nowrap">
                 {product.category}
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                <button className="text-indigo-600 hover:text-indigo-900 mr-2">
-                  Edit
-                </button>
-                <button className="text-red-600 hover:text-red-900">
-                  Delete
-                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 };
 
-export default ProductsTable;
+export default CategoryDetails;

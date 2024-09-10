@@ -1,5 +1,6 @@
-import { ICartItem } from "@/types/types"; // Adjust the path as necessary
+import { ICartItem } from "@/types/types";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import React from "react";
 import { Link } from "react-router-dom";
 
 interface CartButtonProps {

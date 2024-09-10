@@ -1,8 +1,8 @@
-// src/components/CategoryCard.tsx
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; // Adjust import path as per your project structure
 import { ICategory } from "@/types/types";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
 
 interface CategoryCardProps {
   category: ICategory;
@@ -29,14 +29,11 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
             />
             {isHovered && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none"
-                  onClick={
-                    () => {} /* Implement your view products action here */
-                  }
-                >
-                  View Products
-                </button>
+                <Link to={`/categories/${category.name}`}>
+                  <Button className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none">
+                    View Products ({category?.products?.length})
+                  </Button>
+                </Link>
               </div>
             )}
           </div>

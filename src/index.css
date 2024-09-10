@@ -7,6 +7,34 @@
   display: inline-block; /* Ensures the container size is based on content */
 }
 
+html,
+body {
+  overflow-x: auto;
+
+  height: 100%;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
 .gradient-text {
   position: relative; /* Ensures the gradient covers the text */
   background-image: linear-gradient(

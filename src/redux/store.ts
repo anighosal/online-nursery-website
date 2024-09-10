@@ -1,18 +1,20 @@
-import cartReducer from "@/redux/features/cartSlice";
 import { configureStore } from "@reduxjs/toolkit";
-import { baseApi } from "./api/baseApi";
-
-import productReducer from "./reducers/productReducer";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import baseApi from "./api/baseApi";
+import cartReducer from "./features/cartSlice";
+import productsReducer from "./features/productsSlice";
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
-    products: productReducer,
     cart: cartReducer,
+    products: productsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware),
 });
+
+setupListeners(store.dispatch);
+
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;

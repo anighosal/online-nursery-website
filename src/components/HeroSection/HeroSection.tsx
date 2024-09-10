@@ -11,8 +11,8 @@ import {
 
 const HeroSection = () => {
   return (
-    <div className="container mx-auto  bg-slate-100 h-[400px]">
-      <Carousel className="container mx-auto">
+    <div className="h-full w-full max-w-7xl mx-auto container  bg-slate-20 mt-20 pt-10">
+      <Carousel className="">
         <CarouselContent className="h-full">
           <CarouselItem className="flex flex-col md:flex-row items-center h-full w-full">
             <div className="w-full md:w-1/2 p-4 flex flex-col justify-center h-full">

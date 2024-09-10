@@ -1,37 +1,54 @@
-// src/components/Search.tsx
-import { searchProducts } from "@/redux/actions/productActions";
+// src/components/SearchBar.tsx
+import { useSearchProductsAndCategoriesQuery } from "@/redux/api/baseApi";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 
-const Search: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const dispatch = useDispatch();
+const SearchBar: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { data, error, isLoading } = useSearchProductsAndCategoriesQuery(
+    searchQuery,
+    {
+      skip: !searchQuery, // Skip query if searchQuery is empty
+    }
+  );
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    dispatch(searchProducts(searchTerm));
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
-    <form
-      onSubmit={handleSearch}
-      className="md:hidden flex items-center w-full"
-    >
+    <div className="relative">
       <input
         type="text"
-        placeholder="Search products..."
-        className="border border-gray-300 rounded-l px-4 py-2 w-full"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchQuery}
+        onChange={handleSearchChange}
+        placeholder="Search for products or categories..."
+        className="w-full p-2 border rounded"
       />
-      <button
-        type="submit"
-        className="bg-green-600 text-white px-4 py-2 rounded-r"
-      >
-        Search
-      </button>
-    </form>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error loading results</p>}
+
+      {/* Display search results */}
+      {data && (
+        <div className="absolute w-full bg-white border mt-2 p-4 shadow-lg">
+          <h3>Products:</h3>
+          <ul>
+            {data.products.length === 0 && <li>No products found</li>}
+            {data.products.map((product: any) => (
+              <li key={product._id}>{product.title}</li>
+            ))}
+          </ul>
+
+          <h3>Categories:</h3>
+          <ul>
+            {data.categories.length === 0 && <li>No categories found</li>}
+            {data.categories.map((category: any) => (
+              <li key={category._id}>{category.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default Search;
+export default SearchBar;

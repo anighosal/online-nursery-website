@@ -8,12 +8,12 @@ const MainLayout = () => {
     { id: 1, name: "Plant", quantity: 1, price: 9.99 },
   ];
   return (
-    <div>
-      <Navbar cartItems={cartItems}></Navbar>
-      <div className="min-h-[calc(100vh-400px)]">
+    <div className="flex flex-col min-h-screen">
+      <Navbar cartItems={cartItems} />
+      <div className="flex-grow">
         <Outlet />
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

@@ -1,29 +1,52 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Key } from "react";
-
 export interface IProduct {
-  category: string | undefined;
-  name: any;
+  _id: string | undefined;
   id: string;
+
   title: string;
   description: string;
+  price: string;
+  category: string | undefined;
   image: string;
-  price: number;
-  rating: number;
-  buttons: string[];
+  rating: string;
+  quantity: string;
 }
 
 export interface ICategory {
-  id: Key | null | undefined;
   name: string;
   image: string;
-  products: IProduct[];
+  products: IProduct[] | undefined;
 }
 
 export interface ICartItem {
-  id: number;
+  _id: string | undefined;
+  product: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  rating: string;
+
   name: string;
-  quantity: number;
-  price: number;
+  quantity: string;
+  price: string;
+}
+
+export interface IOrder {
+  name: string;
+  phone: string;
+  address: string;
+  cartItems: {
+    _id: string;
+    title: string;
+    description: string;
+    category: string;
+    price: string;
+    quantity: string;
+    image: string;
+    rating: string;
+  }[];
+  status?: string;
+  createdAt?: Date;
 }

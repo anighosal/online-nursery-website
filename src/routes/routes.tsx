@@ -1,13 +1,14 @@
 import MainLayout from "@/components/layouts/MainLayout";
+import Admin from "@/pages/Admin";
 import Cart from "@/pages/Cart/Cart";
-import Dashboard from "@/pages/Dashboard/Dashboard";
+import CategoryDetails from "@/pages/CategoryDetails";
+import Checkout from "@/pages/Checkout";
 
 import Home from "@/pages/Home/Home";
 import Payment from "@/pages/Payment";
 import ProductCategory from "@/pages/ProductCategory/ProductCategory";
 import ProductDetails from "@/pages/ProductDetails";
-import Products from "@/pages/Products";
-import ProductsPage from "@/pages/ProductsPage/ProductsPage";
+
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -19,10 +20,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: "/products",
-        element: <Products />,
-      },
+
       {
         path: "/products/:id",
         element: <ProductDetails />,
@@ -32,24 +30,34 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard />,
+        path: "/categories",
+        element: <CategoryDetails></CategoryDetails>,
+      },
+      {
+        path: "/categories/:categoryName",
+        element: <CategoryDetails></CategoryDetails>,
+      },
+
+      {
+        path: "/admin",
+        element: <Admin />,
       },
       {
         path: "/cart",
         element: <Cart />,
       },
       {
-        path: "/products",
+        path: "/checkout",
+        element: <Checkout></Checkout>,
+      },
+
+      {
+        path: "/payment",
         element: <Payment />,
       },
       {
         path: "/products",
         element: <ProductCategory />,
-      },
-      {
-        path: "/productPage",
-        element: <ProductsPage />,
       },
     ],
   },
