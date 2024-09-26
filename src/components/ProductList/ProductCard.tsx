@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Link to={`/products/${product.id}`}>
+          <Link to={`/products/${product._id}`}>
             <Button className="bg-green-100 text-black px-4 py-2 rounded-md hover:bg-green-200 focus:outline-none">
               View Details
             </Button>

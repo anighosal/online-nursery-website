@@ -42,6 +42,7 @@ const AdminContainer: React.FC = () => {
   const [isUpdateModalVisible, setIsUpdateModalVisible] = useState(false);
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
+  console.log(selectedProduct);
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error loading products</div>;

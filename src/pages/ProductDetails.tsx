@@ -1,8 +1,7 @@
 import CartButton from "@/components/CartButton/CartButton";
 import StarRating from "@/components/ui/StarRating";
-import { useGetProductsQuery } from "@/redux/api/baseApi";
+import { useGetProductByIdQuery } from "@/redux/api/baseApi";
 import { addToCart } from "@/redux/reducers/cartReducer";
-import { IProduct } from "@/types/types";
 
 import React from "react";
 import { useDispatch } from "react-redux";
@@ -12,21 +11,25 @@ const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
 
-  const { data, error, isLoading } = useGetProductsQuery({
-    page: 1,
-    limit: 10,
-    sort: "price",
-    order: "desc",
-  });
+  const { data: product } = useGetProductByIdQuery(id);
+  console.log(id);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading products.</div>;
+  // const { data, error, isLoading } = useGetProductsQuery({
+  //   page: 1,
+  //   limit: 10,
+  //   sort: "price",
+  //   order: "desc",
+  // });
+  console.log(product);
 
-  const products: IProduct[] = data?.products || [];
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>Error loading products.</div>;
 
-  const product = products.find((p: IProduct) => p.id === id);
+  // const products: IProduct[] = data?.products || [];
 
-  if (!product) return <div>Product not found</div>;
+  // const product = products.find((p: IProduct) => p.id === id);
+
+  // if (!product) return <div>Product not found</div>;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
@@ -37,20 +40,20 @@ const ProductDetails: React.FC = () => {
       <div className="flex justify-between">
         <div>
           <img
-            src={product.image}
-            alt={product.title}
+            src={product?.image}
+            alt={product?.title}
             className="h-64 object-cover"
           />
         </div>
         <div className="w-full md:w-1/2 space-y-3 ml-3">
-          <h1 className="text-2xl font-bold">{product.title}</h1>
-          <p className="text-gray-600">{product.description}</p>
-          <p className="text-gray-600">{product.category}</p>
+          <h1 className="text-2xl font-bold">{product?.title}</h1>
+          <p className="text-gray-600">{product?.description}</p>
+          <p className="text-gray-600">{product?.category}</p>
           <div className="flex mt-2">
-            <StarRating rating={Number(product.rating)} />
-            <span className="ml-2 text-gray-600">{product.rating}</span>
+            <StarRating rating={Number(product?.rating)} />
+            <span className="ml-2 text-gray-600">{product?.rating}</span>
           </div>
-          <p className="text-red-600 font-bold">${product.price}</p>
+          <p className="text-red-600 font-bold">${product?.price}</p>
           <div className="flex gap-x-2">
             <div onClick={handleAddToCart} className="cursor-pointer">
               <CartButton cartItems={[]} />

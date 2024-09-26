@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel";
 
 const HeroSection = () => {
+
+  
   return (
     <div className="h-full w-full max-w-7xl mx-auto container  bg-slate-20 mt-20 pt-10">
       <Carousel className="">
