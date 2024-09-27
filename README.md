@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+Wel come to Online nursery website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Technology I use#
+Frontend
 
-Currently, two official plugins are available:
+# React + Redux + TypeScript + Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Backend
 
-## Expanding the ESLint configuration
+# Node + express + mongodb
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Go to my github repository https://github.com/anighosal/online-nursery-website and clone or download ZIP
 
-- Configure the top-level `parserOptions` property like this:
+Open cmd or terminal cd tab then down arrow click got the actual path
+then code . open the vs code
+install i
+set the .env and npm run dev open the browser
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Explain My website
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This website have navbar banner categories, products , image gallery and footer in landing page
+
+## Category
+
+Here are some category show in card view then hover this category image then show the view details and click the view details then the products in category
+
+## Products
+
+Here are products show in card view. If any user
+want to see the details then click the details button show that product details.
+
+If user can buy some products then click the add to cart button and go to the navbar click the cart icon , then show his selected product got the checkout button then user fill his information and click place order
+
+## Dashboard
+
+In the dashboard here are all products show in table format
+in avobe show plus button
+
+if user can add to product or tress then click the + button then open the modal fill all the information then created new product or tree
+
+#Edit---
+If user can update any product then click the edit button then open tha modal then all information put the form then click update button updated successfully
+
+#Delete---
+If user want any product delete then click the delete button click confirm button then deleted product successfully

@@ -2,7 +2,7 @@
 
 export interface IProduct {
   _id: string | undefined;
-  id: string;
+  id: string | undefined;
 
   title: string;
   description: string;

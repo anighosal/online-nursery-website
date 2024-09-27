@@ -2,34 +2,28 @@ import CartButton from "@/components/CartButton/CartButton";
 import StarRating from "@/components/ui/StarRating";
 import { useGetProductByIdQuery } from "@/redux/api/baseApi";
 import { addToCart } from "@/redux/reducers/cartReducer";
+import { IProduct } from "@/types/types";
 
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 
-const ProductDetails: React.FC = () => {
+interface ProductDetailsProps {
+  product?: IProduct;
+}
+
+const ProductDetails: React.FC<ProductDetailsProps> = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
 
   const { data: product } = useGetProductByIdQuery(id);
   console.log(id);
 
-  // const { data, error, isLoading } = useGetProductsQuery({
-  //   page: 1,
   //   limit: 10,
   //   sort: "price",
   //   order: "desc",
   // });
   console.log(product);
-
-  // if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>Error loading products.</div>;
-
-  // const products: IProduct[] = data?.products || [];
-
-  // const product = products.find((p: IProduct) => p.id === id);
-
-  // if (!product) return <div>Product not found</div>;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
