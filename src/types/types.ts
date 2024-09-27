@@ -37,6 +37,7 @@ export interface IOrder {
   name: string;
   phone: string;
   address: string;
+  paymentMethod: string;
   cartItems: {
     _id: string;
     title: string;

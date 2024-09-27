@@ -1,7 +1,7 @@
 import { usePlaceOrderMutation } from "@/redux/api/baseApi";
 import { RootState } from "@/redux/store";
 import { IOrder } from "@/types/types";
-import { Button, Form, Input, message } from "antd";
+import { Button, Form, Input, message, Radio } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -27,6 +27,7 @@ const CheckoutForm: React.FC = () => {
         name: values.name,
         phone: values.phone,
         address: values.address,
+        paymentMethod: values.paymentMethod,
         cartItems: cartItemsForOrder,
       };
       console.log("Order data being sent:", orderData);
@@ -76,6 +77,13 @@ const CheckoutForm: React.FC = () => {
             rules={[{ required: true, message: "Please enter your address" }]}
           >
             <Input placeholder="Address" />
+          </Form.Item>
+
+          <Form.Item label="Payment Method" name="paymentMethod">
+            <Radio.Group>
+              <Radio value="cod">Cash on Delivery</Radio>
+              <Radio value="creditCard">Credit/Debit Card</Radio>
+            </Radio.Group>
           </Form.Item>
 
           <Form.Item>
