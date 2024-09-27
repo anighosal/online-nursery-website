@@ -1,10 +1,6 @@
 import CartButton from "@/components/CartButton/CartButton";
 import { RootState } from "@/redux/store";
-import {
-  HeartOutlined,
-  SearchOutlined,
-  UserAddOutlined,
-} from "@ant-design/icons";
+import { SearchOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -50,15 +46,9 @@ const Navbar: React.FC<NavbarProps> = () => {
         </form>
 
         <div className="flex items-center space-x-4">
-          <Link to="/admin">
-            <p>Admin</p>
-          </Link>
-          <Link to="/login">
-            <UserAddOutlined className="text-gray-700 hover:text-green-600 cursor-pointer" />
-          </Link>
-          <Link to="/wishlist">
-            <HeartOutlined className="text-red-500 hover:text-green-600 cursor-pointer" />
-          </Link>
+          <Link to="/admin">Dashboard</Link>
+          <Link to="/all-products">All Products</Link>
+
           <div className="flex items-center">
             <CartButton cartItems={cartItems} />{" "}
           </div>
