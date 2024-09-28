@@ -9,7 +9,9 @@ const CategoryDetails = () => {
     data: products,
     isLoading,
     isError,
-  } = useGetProductsByCategoryNameQuery(categoryName);
+  } = useGetProductsByCategoryNameQuery(categoryName!, {
+    skip: !categoryName,
+  });
 
   if (isLoading) return <div>Loading...</div>;
 

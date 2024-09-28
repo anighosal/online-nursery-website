@@ -16,7 +16,7 @@ import UpdateProductModal from "./UpdateProductModal";
 const AdminContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory] = useState("");
   const products = useAppSelector((state) => state.products.products);
 
   const {

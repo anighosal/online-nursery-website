@@ -1,4 +1,3 @@
-// src/components/SearchBar.tsx
 import { useSearchProductsAndCategoriesQuery } from "@/redux/api/baseApi";
 import React, { useState } from "react";
 
@@ -7,7 +6,7 @@ const SearchBar: React.FC = () => {
   const { data, error, isLoading } = useSearchProductsAndCategoriesQuery(
     searchQuery,
     {
-      skip: !searchQuery, // Skip query if searchQuery is empty
+      skip: !searchQuery,
     }
   );
 
@@ -27,7 +26,6 @@ const SearchBar: React.FC = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>Error loading results</p>}
 
-      {/* Display search results */}
       {data && (
         <div className="absolute w-full bg-white border mt-2 p-4 shadow-lg">
           <h3>Products:</h3>

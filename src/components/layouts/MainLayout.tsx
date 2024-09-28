@@ -5,7 +5,19 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   const cartItems: ICartItem[] = [
-    { id: 1, name: "Plant", quantity: 1, price: 9.99 },
+    {
+      id: "1",
+      name: "Plant",
+      quantity: "1",
+      price: "9.99",
+      _id: undefined,
+      product: "",
+      title: "",
+      description: "",
+      category: "",
+      image: "",
+      rating: "",
+    },
   ];
   return (
     <div className="flex flex-col min-h-screen">

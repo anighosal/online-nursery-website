@@ -16,7 +16,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
 
-  const { data: product } = useGetProductByIdQuery(id);
+  const { data: product } = useGetProductByIdQuery(id!, {
+    skip: !id,
+  });
   console.log(id);
 
   //   limit: 10,
@@ -26,7 +28,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
   console.log(product);
 
   const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    if (product) {
+      dispatch(addToCart(product));
+    }
   };
 
   return (

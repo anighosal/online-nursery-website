@@ -1,11 +1,10 @@
 import { RootState } from "@/redux/store";
 
-import { useSelector } from "react-redux"; // Adjust import based on your state management choice
-
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const cartItems = useSelector((state: RootState) => state.cart.items); // Assuming cart items are stored in Redux state
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
     <div className="container mx-auto mt-8">

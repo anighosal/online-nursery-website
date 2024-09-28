@@ -23,7 +23,7 @@ const cartSlice = createSlice({
         ).toString();
       } else {
         state.items.push({
-          _id: product._id ?? "",
+          id: product.id ?? "",
           name: product.title,
           title: product.title,
           description: product.description,
@@ -33,6 +33,7 @@ const cartSlice = createSlice({
           price: product.price,
           quantity: "1",
           product: "",
+          _id: undefined,
         });
       }
     },

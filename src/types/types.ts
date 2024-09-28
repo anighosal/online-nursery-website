@@ -21,6 +21,7 @@ export interface ICategory {
 
 export interface ICartItem {
   _id: string | undefined;
+  id: string;
   product: string;
   title: string;
   description: string;

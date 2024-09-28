@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; // Adjust import path as per your project structure
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ICategory } from "@/types/types";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";

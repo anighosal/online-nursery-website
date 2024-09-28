@@ -1,3 +1,4 @@
+import { ICartItem } from "@/types/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface OrderState {
@@ -35,7 +36,7 @@ export const createOrder = createAsyncThunk(
       }
 
       return await response.json();
-    } catch (error) {
+    } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }

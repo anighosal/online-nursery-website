@@ -1,9 +1,10 @@
 import { ICategory, IOrder, IProduct } from "@/types/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
 const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:5001",
+  }),
   endpoints: (builder) => ({
     getProducts: builder.query<
       {
@@ -18,12 +19,13 @@ const baseApi = createApi({
         sort: string;
         order: string;
         category?: string;
+        search?: string;
       }
     >({
-      query: ({ page, limit, sort, order, category }) =>
+      query: ({ page, limit, sort, order, category, search }) =>
         `/products?page=${page}&limit=${limit}&sort=${sort}&order=${order}${
           category ? `&category=${category}` : ""
-        }`,
+        }${search ? `&search=${search}` : ""}`,
       providesTags: (result) =>
         result
           ? [
@@ -85,7 +87,7 @@ const baseApi = createApi({
         url: `/products/${productId}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, productId) => [
+      invalidatesTags: (_result, _error, productId) => [
         { type: "Products", id: productId },
         { type: "Products", id: "LIST" },
       ],
