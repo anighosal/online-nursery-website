@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import CartButton from "@/components/CartButton/CartButton";
 import { RootState } from "@/redux/store";
 import { ICartItem } from "@/types/types";
@@ -13,13 +14,13 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
-  const [Search, setSearch] = useState("");
+  const [searchItem, setSearchItem] = useState("");
+  const navigate = useNavigate();
 
-  const Navigate = useNavigate();
-
-  const HandleSearch = (e: any) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    Navigate(`/products?search=${Search}`);
+    if (!searchItem.trim()) return;
+    navigate(`/search?query=${searchItem}`); // ✅ Navigate to Search Page
   };
 
   return (
@@ -31,14 +32,15 @@ const Navbar: React.FC<NavbarProps> = () => {
           </h1>
         </Link>
         <form
-          onSubmit={HandleSearch}
+          onSubmit={handleSearch}
           className="hidden md:flex items-center w-full max-w-md mx-4"
         >
           <input
             type="text"
             placeholder="Search products..."
             className="border border-gray-300 rounded-l px-4 py-2 w-full"
-            onChange={(e) => setSearch(e.target.value)}
+            value={searchItem}
+            onChange={(e) => setSearchItem(e.target.value)}
           />
           <button
             type="submit"

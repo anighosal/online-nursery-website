@@ -24,7 +24,7 @@ const photos = [
   },
   {
     src: "https://i.ibb.co/7jWRwLf/713b6h-Lg-IDL-AC-UF1000-1000-QL80.jpg",
-    width: 3,
+    width: 1,
     height: 1,
   },
   {
@@ -53,7 +53,7 @@ const photos = [
     height: 1,
   },
   {
-    src: "https://i.ibb.co/ky8MkVj/oranges-1117628-640.jpg",
+    src: "https://i.ibb.co/thzWzpS/b9f74faae7f2c1b3865e007116cfb8fb.jpg",
     width: 1,
     height: 1,
   },
@@ -63,17 +63,37 @@ const photos = [
     height: 1,
   },
   {
-    src: "https://i.ibb.co/HpdN1tQ/istockphoto-177320705-612x612.jpg",
+    src: "https://i.ibb.co/thzWzpS/b9f74faae7f2c1b3865e007116cfb8fb.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: "https://i.ibb.co/thzWzpS/b9f74faae7f2c1b3865e007116cfb8fb.jpg",
     width: 1,
     height: 1,
   },
 ];
 
+const CustomImage = ({ index, photo, onClick }) => {
+  return (
+    <div className=" mx-auto">
+      <img
+        src={photo.src}
+        alt={`Image ${index}`}
+        className="w-[250px] h-[250px] object-cover rounded-lg shadow-md"
+        onClick={(e) => onClick && onClick(e, { index, photo })}
+      />
+    </div>
+  );
+};
+
 const ImageGallery = () => {
   return (
     <Container>
       <h2 className="text-2xl font-bold text-center mb-4">Image Gallery</h2>
-      <Gallery photos={photos} />
+      <div className="flex justify-center">
+        <Gallery photos={photos} renderImage={CustomImage} />
+      </div>
     </Container>
   );
 };

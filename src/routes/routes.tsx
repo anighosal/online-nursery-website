@@ -9,6 +9,7 @@ import Home from "@/pages/Home/Home";
 import Payment from "@/pages/Payment";
 import ProductCategory from "@/pages/ProductCategory/ProductCategory";
 import ProductDetails from "@/pages/ProductDetails";
+import SearchResults from "@/pages/SearchResults";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -27,8 +28,13 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
+        path: "/search",
+        element: <SearchResults></SearchResults>,
+      },
+
+      {
         path: "/products",
-        element: <ProductDetails />,
+        element: <ALLProducts></ALLProducts>,
       },
       {
         path: "/all-products",

@@ -3,11 +3,8 @@ import Container from "@/components/ui/Container";
 import { useGetProductsQuery } from "@/redux/api/baseApi";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useSearchParams } from "react-router-dom";
 
 const AllProducts = () => {
-  const [searchParams] = useSearchParams();
-  const search = searchParams.get("search") || "";
   const [page, setPage] = useState(1);
   const limit = 10;
   const { data, error, isLoading } = useGetProductsQuery({

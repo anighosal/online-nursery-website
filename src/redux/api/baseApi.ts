@@ -101,8 +101,13 @@ const baseApi = createApi({
       invalidatesTags: [{ type: "Products", id: "LIST" }],
     }),
 
-    searchProductsAndCategories: builder.query({
-      query: (searchTerm) => `/products/search?query=${searchTerm}`,
+    searchProductsAndCategories: builder.query<
+      { products: IProduct[]; categories: ICategory[] },
+      string
+    >({
+      query: (searchTerm) =>
+        `/products/search?query=${encodeURIComponent(searchTerm)}`,
+      providesTags: [{ type: "Products", id: "SEARCH" }],
     }),
 
     placeOrder: builder.mutation<IOrder, Partial<IOrder>>({

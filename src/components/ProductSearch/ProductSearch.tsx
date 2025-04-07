@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useSearchProductsAndCategoriesQuery } from "@/redux/api/baseApi";
 import React, { useEffect, useState } from "react";
 
